@@ -282,7 +282,7 @@ func (store *BoltDBFileStore) open(dbPath string) error {
 	dir := filepath.Dir(dbPath)
 	if _, err := os.Stat(dir); err != nil {
 		if os.IsNotExist(err) {
-			err = os.Mkdir(dir, 0666)
+			err = os.Mkdir(dir, 0766)
 		}
 		if err != nil {
 			return err
